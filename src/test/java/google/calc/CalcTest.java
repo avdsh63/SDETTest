@@ -5,12 +5,12 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
-import page.object.GooglePage;
+import page.object.YandexPage;
 
 public class CalcTest {
 
     public ChromeDriver driver;
-    private GooglePage googlePage;
+    private YandexPage yandexPage;
 
     @Before
     public void setUp() {
@@ -20,41 +20,18 @@ public class CalcTest {
 
     @Test
     public void firstTest() throws InterruptedException {
-        driver.get("https://www.google.com/");
+        driver.get("https://yandex.ru/");
 
-        googlePage = new GooglePage(driver);
-
-        String title = driver.getTitle();
-        Assert.assertTrue(title.equals("Google"));
-
-        googlePage.openGoogleCalc();
-        googlePage.calculateFirstTest();
-    }
-
-    @Test
-    public void secondTest() throws InterruptedException {
-        driver.get("https://www.google.com/");
-
-        googlePage = new GooglePage(driver);
+        yandexPage = new YandexPage(driver);
 
         String title = driver.getTitle();
-        Assert.assertTrue(title.equals("Google"));
+        Assert.assertTrue(title.equals("Яндекс"));
 
-        googlePage.openGoogleCalc();
-        googlePage.calculateForSecondTest();
-    }
+        yandexPage.firstPart();
 
-    @Test
-    public void thirdTest() throws InterruptedException {
-        driver.get("https://www.google.com/");
+        driver.get("https://mail.yandex.ru/");
+        Thread.sleep(5000);
 
-        googlePage = new GooglePage(driver);
-
-        String title = driver.getTitle();
-        Assert.assertTrue(title.equals("Google"));
-
-        googlePage.openGoogleCalc();
-        googlePage.calculateForThirdTest();
     }
 
     @After
