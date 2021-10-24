@@ -28,9 +28,10 @@ public class CalcTest {
         Assert.assertTrue(title.equals("Яндекс"));
 
         yandexPage.firstPart();
-
+        Thread.sleep(2000);
         driver.get("https://mail.yandex.ru/");
-        Thread.sleep(5000);
+        Thread.sleep(3000);
+        yandexPage.secondPart("first_message");
 
     }
 

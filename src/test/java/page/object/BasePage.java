@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 public class BasePage {
 
     protected WebDriver driver;
@@ -43,5 +45,11 @@ public class BasePage {
         else {
         return false;
         }
+    }
+
+    public int messageCouter(String theme_text) throws InterruptedException {
+        Thread.sleep(1000);
+        List<WebElement> elements = driver.findElements(By.partialLinkText(theme_text));
+        return elements.size();
     }
 }
