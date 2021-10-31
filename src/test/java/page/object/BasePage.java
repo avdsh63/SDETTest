@@ -26,7 +26,6 @@ public class BasePage {
     public WebElement waitForElementAndClickByXpath(String locator, String error_message) throws InterruptedException {
         WebElement element = waitForElementPresentedByXpath(locator, error_message);
         element.click();
-        Thread.sleep(150);
         return element;
     }
 
@@ -36,7 +35,6 @@ public class BasePage {
     }
 
     public boolean elementTextEquals(String xpath, String equals) throws InterruptedException {
-        Thread.sleep(1000);
         WebElement element = this.getElement(xpath, "can't find element");
         if (element.getText().equals(equals)) {
             return true;
@@ -47,7 +45,6 @@ public class BasePage {
     }
 
     public int messageCouter(String theme_text) throws InterruptedException {
-        Thread.sleep(1000);
         List<WebElement> elements = driver.findElements(By.partialLinkText(theme_text));
         return elements.size();
     }

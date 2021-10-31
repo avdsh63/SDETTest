@@ -19,7 +19,7 @@ public class CalcTest {
     }
 
     @Test
-    public void firstTest() throws InterruptedException {
+    public void googleCalcTest() throws InterruptedException {
         driver.get("https://yandex.ru/");
 
         yandexPage = new YandexPage(driver);
@@ -27,12 +27,11 @@ public class CalcTest {
         String title = driver.getTitle();
         Assert.assertTrue(title.equals("Яндекс"));
 
-        yandexPage.firstPart();
-        Thread.sleep(2000);
+        yandexPage.authPath();
+        Thread.sleep(500);
         driver.get("https://mail.yandex.ru/");
-        Thread.sleep(3000);
-        yandexPage.secondPart("first_message");
-
+        Thread.sleep(500);
+        yandexPage.sendMail("first_message");
     }
 
     @After
