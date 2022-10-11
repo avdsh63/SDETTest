@@ -34,15 +34,15 @@ public class BasePage {
         element.sendKeys(text);
     }
 
-    public boolean elementTextEquals(String xpath, String equals) throws InterruptedException {
-        WebElement element = this.getElement(xpath, "can't find element");
-        if (element.getText().equals(equals)) {
-            return true;
-        }
-        else {
-        return false;
-        }
-    }
+//    public boolean elementTextEquals(String xpath, String equals) throws InterruptedException {
+//        WebElement element = this.getElement(xpath, "can't find element");
+//        if (element.getText().equals(equals)) {
+//            return true;
+//        }
+//        else {
+//        return false;
+//        }
+//    }
 
     public int messageCouter(String theme_text) throws InterruptedException {
         List<WebElement> elements = driver.findElements(By.partialLinkText(theme_text));
